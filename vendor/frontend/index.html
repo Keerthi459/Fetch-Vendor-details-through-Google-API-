@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vendor Directory</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <header class="header">
+        <div class="header-container">
+            <h1>Vendor Directory</h1>
+            <p>Find the best vendors for your needs</p>
+        </div>
+    </header>
+
+    <main class="main-content">
+        <section class="controls-section">
+            <div class="search-box">
+                <input type="text" id="locationInput" placeholder="Enter Location (e.g. Madurai)" aria-label="Location">
+                <select id="serviceSelect" aria-label="Select Service">
+                    <option value="Planners">1. Planners</option>
+                    <option value="Venue">2. Venue</option>
+                    <option value="Decorator">3. Decorator</option>
+                    <option value="Invitation">4. Invitation</option>
+                    <option value="Mehendi">5. Mehendi</option>
+                    <option value="Makeup Artist">6. Makeup Artist</option>
+                    <option value="Wedding Wear">7. Wedding Wear</option>
+                    <option value="Jewellery">8. Jewellery</option>
+                    <option value="Caterers">9. Caterers</option>
+                    <option value="Photographers">10. Photographers</option>
+                    <option value="Dj">11. Dj</option>
+                    <option value="Entertainment">12. Entertainment</option>
+                    <option value="Choreographers">13. Choreographers</option>
+                    <option value="Transport">14. Transport</option>
+                    <option value="Gifts">15. Gifts</option>
+                    <option value="Honeymoon">16. Honeymoon</option>
+                    <option value="Pandit">17. Pandit</option>
+                </select>
+                <button id="searchBtn" class="search-btn">Search vendors</button>
+            </div>
+
+            <div class="search-box" style="margin-top: 1rem;">
+                <input type="text" id="searchInput" placeholder="Filter current results by name..."
+                    aria-label="Filter vendors">
+            </div>
+
+            <div class="filters-box">
+                <select id="ratingFilter" aria-label="Filter by rating">
+                    <option value="0">All Ratings</option>
+                    <option value="3">3.0+ Stars</option>
+                    <option value="4">4.0+ Stars</option>
+                    <option value="4.5">4.5+ Stars</option>
+                </select>
+
+                <select id="sortSelect" aria-label="Sort vendors">
+                    <option value="score">Sort by Score (High to Low)</option>
+                    <option value="rating">Sort by Rating (High to Low)</option>
+                    <option value="reviews">Sort by Reviews (High to Low)</option>
+                </select>
+            </div>
+        </section>
+
+        <section class="results-section">
+            <div id="initialState" class="state-message">
+                <p>Welcome! Enter a location and select a service to start searching for live vendors algorithms.</p>
+            </div>
+
+            <div id="loadingState" class="state-message hidden">
+                <div class="spinner"></div>
+                <p>Loading vendors...</p>
+            </div>
+
+            <div id="errorState" class="state-message hidden">
+                <p>Failed to load vendors. Please try again later.</p>
+            </div>
+
+            <div id="emptyState" class="state-message hidden">
+                <p>No vendors found matching your criteria.</p>
+            </div>
+
+            <div id="vendorGrid" class="vendor-grid hidden">
+                <!-- Vendor cards will be injected here by script.js -->
+            </div>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
